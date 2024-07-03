@@ -147,7 +147,7 @@ function library.new(library_title, cfg_location)
     local Cursor = library:create("ImageLabel", {
         Name = "Cursor",
         BackgroundTransparency = 1,
-        Size = UDim2.new(0, 17, 0, 17),
+        Size = UDim2.new(0, 35, 0, 35),
         Image = "rbxassetid://18314337032",
         ZIndex = 6969,
     }, ScreenGui)
