@@ -147,7 +147,7 @@ function library.new(library_title, cfg_location)
     local Cursor = library:create("ImageLabel", {
         Name = "Cursor",
         BackgroundTransparency = 1,
-        Size = UDim2.new(0, 55, 0, 55),
+        Size = UDim2.new(0, 125, 0, 125),
         Image = "rbxassetid://18314337032",
         ZIndex = 7200,
     }, ScreenGui)
@@ -195,40 +195,41 @@ function library.new(library_title, cfg_location)
 
     library:set_draggable(ImageLabel)
 
-    local Title = library:create("TextLabel", {
-        Name = "Title",
-        AnchorPoint = Vector2.new(0.5, 0),
-        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0.5, 0, 0, 0),
-        Size = UDim2.new(1, -22, 0, 30),
-        Font = Enum.Font.Ubuntu,
-        Text = library_title,
-        TextColor3 = Color3.fromRGB(255, 255, 255),
-        TextSize = 16,
-        TextXAlignment = Enum.TextXAlignment.Left,
-        RichText = true,
-    }, ImageLabel)
+  local Title = library:create("TextLabel", {
+    Name = "Title",
+    AnchorPoint = Vector2.new(0.5, 0),
+    BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+    BackgroundTransparency = 0,
+    Position = UDim2.new(0.5, 0, 0, 0),
+    Size = UDim2.new(1, -22, 0, 30),
+    Font = Enum.Font.Ubuntu,
+    Text = library_title,
+    TextColor3 = Color3.fromRGB(255, 0, 0),
+    TextSize = 16,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    RichText = true,
+}, ImageLabel)
 
-    local TabButtons = library:create("Frame", {
-        Name = "TabButtons",
-        BackgroundColor3 = Color3.fromRGB(92, 2, 1),
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0, 12, 0, 41),
-        Size = UDim2.new(0, 76, 0, 447),
-    }, ImageLabel)
-    
-    local UIListLayout = library:create("UIListLayout", {
-        HorizontalAlignment = Enum.HorizontalAlignment.Center
-    }, TabButtons)
+local TabButtons = library:create("Frame", {
+    Name = "TabButtons",
+    BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+    BackgroundTransparency = 0,
+    Position = UDim2.new(0, 12, 0, 41),
+    Size = UDim2.new(0, 76, 0, 447),
+}, ImageLabel)
 
-    local Tabs = library:create("Frame", {
-        Name = "Tabs",
-        BackgroundColor3 = Color3.fromRGB(92, 2, 1),
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0, 102, 0, 42),
-        Size = UDim2.new(0, 586, 0, 446),
-    }, ImageLabel)
+local UIListLayout = library:create("UIListLayout", {
+    HorizontalAlignment = Enum.HorizontalAlignment.Center
+}, TabButtons)
+
+local Tabs = library:create("Frame", {
+    Name = "Tabs",
+    BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+    BackgroundTransparency = 0,
+    Position = UDim2.new(0, 102, 0, 42),
+    Size = UDim2.new(0, 586, 0, 446),
+}, ImageLabel)
+
 
 	if syn then
     local GetName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
@@ -250,21 +251,22 @@ end
         menu.values[tab_num] = {}
         tab_num = tab_num + 1
 
-        local TabButton = library:create("TextButton", {
-            BackgroundColor3 = Color3.fromRGB(92, 2, 1),
-            BackgroundTransparency = 1,
-            Size = UDim2.new(0, 76, 0, 90),
-            Text = "",
-        }, TabButtons)
+       local TabButton = library:create("TextButton", {
+    BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+    BackgroundTransparency = 0,
+    Size = UDim2.new(0, 76, 0, 90),
+    Text = "",
+}, TabButtons)
 
-        local TabImage = library:create("ImageLabel", {
-            AnchorPoint = Vector2.new(0.5, 0.5),
-            BackgroundTransparency = 1,
-            Position = UDim2.new(0.5, 0, 0.5, 0),
-            Size = UDim2.new(0, 32, 0, 32),
-            Image = tab_image,
-            ImageColor3 = Color3.fromRGB(164,164,164),
-        }, TabButton)
+local TabImage = library:create("ImageLabel", {
+    AnchorPoint = Vector2.new(0.5, 0.5),
+    BackgroundTransparency = 1,
+    Position = UDim2.new(0.5, 0, 0.5, 0),
+    Size = UDim2.new(0, 32, 0, 32),
+    Image = tab_image,
+    ImageColor3 = Color3.fromRGB(255, 0, 0),
+}, TabButton)
+
 
         local TabSections = Instance.new("Frame")
         local TabFrames = Instance.new("Frame")
