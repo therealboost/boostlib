@@ -147,7 +147,7 @@ function library.new(library_title, cfg_location)
     local Cursor = library:create("ImageLabel", {
         Name = "Cursor",
         BackgroundTransparency = 1,
-        Size = UDim2.new(0, 125, 0, 125),
+        Size = UDim2.new(0, 50, 0, 50),
         Image = "rbxassetid://18314337032",
         ZIndex = 7200,
     }, ScreenGui)
@@ -215,7 +215,7 @@ local TabButtons = library:create("Frame", {
     BackgroundColor3 = Color3.fromRGB(0, 0, 0),
     BackgroundTransparency = 0,
     Position = UDim2.new(0, 12, 0, 41),
-    Size = UDim2.new(0, 76, 0, 447),
+    Size = UDim2.new(0, 76, 0, 76),
 }, ImageLabel)
 
 local UIListLayout = library:create("UIListLayout", {
