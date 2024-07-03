@@ -147,9 +147,9 @@ function library.new(library_title, cfg_location)
     local Cursor = library:create("ImageLabel", {
         Name = "Cursor",
         BackgroundTransparency = 1,
-        Size = UDim2.new(0, 35, 0, 35),
+        Size = UDim2.new(0, 55, 0, 55),
         Image = "rbxassetid://18314337032",
-        ZIndex = 6969,
+        ZIndex = 7200,
     }, ScreenGui)
 
     rs.RenderStepped:Connect(function()
